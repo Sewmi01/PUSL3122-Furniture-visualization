@@ -1,9 +1,15 @@
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
+import AppShell from './components/AppShell'
 import Login from './pages/Login'
+import Home from './pages/Home'
 import Dashboard from './pages/Dashboard'
 import AdminDashboard from './pages/AdminDashboard'
+import Designer from './pages/Designer'
+import Designs from './pages/Designs'
+import About from './pages/About'
 import { useAuth } from './store/useAuth'
+
 function ProtectedRoute({ children }) {
   const { isAuthed } = useAuth()
   return isAuthed ? children : <Navigate to="/login" replace />
